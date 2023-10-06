@@ -10,12 +10,12 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Play{
 
     public void play(){
         for (int i = 0; i < this.durata; i++) {
-            System.out.print(this.titolo);
+            System.out.println(this.titolo);
             for (int j = 0; j < this.volume; j++) {
-                System.out.print('!');
+                System.out.println('!');
             }
-            System.out.println(" ");
-        }};
+        }
+    };
     public void alzaVolume(){};
     public void abbassaVolume(){};
 }
