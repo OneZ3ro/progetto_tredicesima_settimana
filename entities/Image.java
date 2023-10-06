@@ -12,7 +12,7 @@ public class Image extends ElementoMultimediale implements Brightness{
         }
     }
     public void show(){
-        System.out.print(this.titolo + ' ');
+        System.out.print("Nome dell'immagine: " + this.titolo + ", luminosità: ");
         for (int i = 0; i < this.brightness; i++) {
             System.out.print('*');
         }

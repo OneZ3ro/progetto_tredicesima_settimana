@@ -17,7 +17,7 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Play{
 
     public void play(){
         for (int i = 0; i < this.durata; i++) {
-            System.out.print(this.titolo);
+            System.out.print((i+1) + ") Nome della registrazione audio: " + this.titolo + ", volume: ");
             for (int j = 0; j < this.volume; j++) {
                 System.out.print('!');
             }

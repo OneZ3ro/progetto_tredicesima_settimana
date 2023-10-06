@@ -19,10 +19,11 @@ public class Video extends ElementoMultimediale implements Play, Brightness{
 
     public void play(){
         for (int i = 0; i < this.durata; i++) {
-            System.out.print(this.titolo);
+            System.out.print((i + 1) + ") Nome del video: " + this.titolo + ", volume: ");
             for (int j = 0; j < this.volume; j++) {
-                System.out.print(" ! ");
+                System.out.print('!');
             }
+            System.out.print(" - luminosità: ");
             for (int j = 0; j < this.brightness; j++) {
                 System.out.print('*');
             }
