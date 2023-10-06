@@ -39,4 +39,12 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Play{
             this.volume -= x;
         }
     };
+
+    public int getDurata() {
+        return durata;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
 }

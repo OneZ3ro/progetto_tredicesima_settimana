@@ -13,7 +13,7 @@ public class Image extends ElementoMultimediale implements Brightness{
     public void show(){
         System.out.print(this.titolo + ' ');
         for (int i = 0; i < this.brightness; i++) {
-            System.out.println('*');
+            System.out.print('*');
         }
     };
     public void increaseBrightness(int x){
@@ -32,4 +32,7 @@ public class Image extends ElementoMultimediale implements Brightness{
             this.brightness -= x;
         }
     };
+    public int getBrightness() {
+        return brightness;
+    }
 }

@@ -60,4 +60,14 @@ public class Video extends ElementoMultimediale implements Play, Brightness{
             this.brightness -= x;
         }
     };
+
+    public int getDurata() {
+        return durata;
+    }
+    public int getVolume() {
+        return volume;
+    }
+    public int getBrightness() {
+        return brightness;
+    }
 }
