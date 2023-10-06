@@ -1,6 +1,6 @@
 package entities;
 
 public interface Brightness {
-    void increaseBrightness();
-    void decreaseBrightness();
+    void increaseBrightness(int x);
+    void decreaseBrightness(int x);
 }

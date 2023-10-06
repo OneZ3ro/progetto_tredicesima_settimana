@@ -7,9 +7,13 @@ public class Video extends ElementoMultimediale implements Play, Brightness{
 
     public Video(String titolo, int durata, int volume, int brightness) {
         super(titolo);
-        this.durata = durata;
-        this.volume = volume;
-        this.brightness = brightness;
+        if (durata > 0 && volume > 0 && brightness > 0) {
+            this.durata = durata;
+            this.volume = volume;
+            this.brightness = brightness;
+        } else {
+            System.out.println("Uno dei valori che hai inserito è minore di 0! Riprova");
+        }
     }
 
     public void play(){
@@ -24,8 +28,36 @@ public class Video extends ElementoMultimediale implements Play, Brightness{
             System.out.println(' ');
         }
     };
-    public void alzaVolume(){};
-    public void abbassaVolume(){};
-    public void increaseBrightness(){};
-    public void decreaseBrightness(){};
+    public void alzaVolume(int x){
+        if(x >= 10 || x + this.volume >= 10) {
+            this.volume = 10;
+        } else {
+            this.volume += x;
+        }
+    };
+    public void abbassaVolume(int x){
+        if (this.volume <= x){
+            if (x >= 10 || this.volume - x <= 0) {
+                this.volume = 0;
+            }
+        } else {
+            this.volume -= x;
+        }
+    };
+    public void increaseBrightness(int x){
+        if(x >= 10 || x + this.brightness >= 10) {
+            this.brightness = 10;
+        } else {
+            this.brightness += x;
+        }
+    };
+    public void decreaseBrightness(int x){
+        if (this.brightness <= x){
+            if (x >= 10 || this.brightness - x <= 0) {
+                this.brightness = 0;
+            }
+        } else {
+            this.brightness -= x;
+        }
+    };
 }

@@ -6,8 +6,12 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Play{
 
     public RegistrazioneAudio(String titolo, int durata, int volume) {
         super(titolo);
-        this.durata = durata;
-        this.volume = volume;
+        if (durata > 0 && volume > 0) {
+            this.durata = durata;
+            this.volume = volume;
+        } else {
+            System.out.println("Uno dei valori che hai inserito è minore di 0! Riprova");
+        }
     }
 
     public void play(){
@@ -19,6 +23,20 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Play{
             System.out.println(' ');
         }
     };
-    public void alzaVolume(){};
-    public void abbassaVolume(){};
+    public void alzaVolume(int x){
+        if(x >= 10 || x + this.volume >= 10) {
+            this.volume = 10;
+        } else {
+            this.volume += x;
+        }
+    };
+    public void abbassaVolume(int x){
+        if (this.volume <= x){
+            if (x >= 10 || this.volume - x <= 0) {
+                this.volume = 0;
+            }
+        } else {
+            this.volume -= x;
+        }
+    };
 }

@@ -2,6 +2,6 @@ package entities;
 
 public interface Play {
     void play();
-    void alzaVolume();
-    void abbassaVolume();
+    void alzaVolume(int xx);
+    void abbassaVolume(int xx);
 }
