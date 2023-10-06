@@ -28,4 +28,6 @@ public class Player {
     public void setRegAudio(RegistrazioneAudio regAudio) {
         this.regAudio = regAudio;
     }
+
+
 }

@@ -12,7 +12,7 @@ public class Video extends ElementoMultimediale implements Play, Brightness{
             this.volume = volume;
             this.brightness = brightness;
         } else {
-            System.out.println("Uno dei valori che hai inserito è non rispetta gli standard! Riprova");
+            System.out.println("\nUno dei valori che hai inserito è non rispetta gli standard! Riprova");
             this.durata = -1;
         }
     }

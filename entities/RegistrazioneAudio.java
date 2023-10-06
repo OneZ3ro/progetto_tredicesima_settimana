@@ -10,7 +10,7 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Play{
             this.durata = durata;
             this.volume = volume;
         } else {
-            System.out.println("Uno dei valori che hai inserito è non rispetta gli standard! Riprova");
+            System.out.println("\nUno dei valori che hai inserito è non rispetta gli standard! Riprova");
             this.durata = -1;
         }
     }

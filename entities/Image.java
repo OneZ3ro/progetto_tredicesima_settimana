@@ -7,12 +7,12 @@ public class Image extends ElementoMultimediale implements Brightness{
         if (brightness >= 0 && brightness <= 10) {
             this.brightness = brightness;
         } else {
-            System.out.println("Uno dei valori che hai inserito è non rispetta gli standard! Riprova");
+            System.out.println("\nUno dei valori che hai inserito è non rispetta gli standard! Riprova");
             this.brightness = -1;
         }
     }
     public void show(){
-        System.out.print("Nome dell'immagine: " + this.titolo + ", luminosità: ");
+        System.out.print("\nNome dell'immagine: " + this.titolo + ", luminosità: \n");
         for (int i = 0; i < this.brightness; i++) {
             System.out.print('*');
         }

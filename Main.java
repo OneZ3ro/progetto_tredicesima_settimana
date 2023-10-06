@@ -66,6 +66,7 @@ public class Main {
                 System.out.println("\nNon hai inserito una delle possibili scelte. Forzato arresto programma");
                 return;
         }
+
         switch (choose1) {
             case 1:
                 int n = 12;
