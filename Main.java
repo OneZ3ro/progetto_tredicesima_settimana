@@ -1,76 +1,89 @@
-import entities.Image;
-import entities.Player;
-import entities.RegistrazioneAudio;
-import entities.Video;
+import entities.*;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Player player1 = new Player();
-        System.out.println("Che cosa vuoi creare?");
-        System.out.println("[1]: Immagine  -  [2]: Video  -  [3]: Registrazione Audio  -  [0]: Termina programma");
-        int choose1 = Integer.parseInt(input.nextLine());
-        switch (choose1) {
-            case 1:
-                System.out.println("\nInserisci il nome della tua immagine");
-                String nomeImg = input.nextLine();
-                System.out.println("\nInserisci la tua attuale luminosità (min: 0, max: 10)");
-                int lumImg = Integer.parseInt(input.nextLine());
-                Image img = new Image(nomeImg, lumImg);
-                int checkImg = img.getBrightness();
-                if (checkImg != -1) {
-                    player1.setImg(img);
-                    break;
-                } else {
-                    return;
-                }
-            case 2:
-                System.out.println("\nInserisci il nome del tuo video");
-                String nomeVid = input.nextLine();
-                System.out.println("\nInserisci la durata del tuo video");
-                int durataVid = Integer.parseInt(input.nextLine());
-                System.out.println("\nInserisci il tuo attuale volume (min: 0, max: 10)");
-                int volumeVid = Integer.parseInt(input.nextLine());
-                System.out.println("\nInserisci la tua attuale luminosità (min: 0, max: 10)");
-                int lumVid = Integer.parseInt(input.nextLine());
-                Video vid = new Video(nomeVid, durataVid, volumeVid, lumVid);
-                int checkVid = vid.getDurata();
-                if (checkVid != -1) {
-                    player1.setVid(vid);
-                    break;
-                } else {
-                    return;
-                }
+        System.out.println("Quanti elementi vuoi creare?");
+        int quanti = Integer.parseInt(input.nextLine());
 
-            case 3:
-                System.out.println("\nInserisci il nome della tua registrazione audio");
-                String nomeRegAudio = input.nextLine();
-                System.out.println("\nInserisci la durata della tua registrazione audio");
-                int durataRegAudio = Integer.parseInt(input.nextLine());
-                System.out.println("\nInserisci il tuo attuale volume (min: 0, max: 10)");
-                int volumeRegAudio = Integer.parseInt(input.nextLine());
-                RegistrazioneAudio regAudio = new RegistrazioneAudio(nomeRegAudio, durataRegAudio, volumeRegAudio);
-                int checkRegAudio = regAudio.getDurata();
-                if (checkRegAudio != -1) {
-                    player1.setRegAudio(regAudio);
-                    break;
-                } else {
+        ElementoMultimediale[] myArr = new ElementoMultimediale[quanti];
+        for (int i = 0; i < myArr.length; i++) {
+            System.out.println("Che cosa vuoi creare?");
+            System.out.println("[1]: Immagine  -  [2]: Video  -  [3]: Registrazione Audio  -  [0]: Termina programma");
+            int choose1 = Integer.parseInt(input.nextLine());
+            switch (choose1) {
+                case 1:
+                    System.out.println("\nInserisci il nome della tua immagine");
+                    String nomeImg = input.nextLine();
+                    System.out.println("\nInserisci la tua attuale luminosità (min: 0, max: 10)");
+                    int lumImg = Integer.parseInt(input.nextLine());
+                    Image img = new Image(nomeImg, lumImg);
+                    int checkImg = img.getBrightness();
+                    if (checkImg != -1) {
+                        myArr[i] = img;
+                        break;
+                    } else {
+                        return;
+                    }
+                case 2:
+                    System.out.println("\nInserisci il nome del tuo video");
+                    String nomeVid = input.nextLine();
+                    System.out.println("\nInserisci la durata del tuo video");
+                    int durataVid = Integer.parseInt(input.nextLine());
+                    System.out.println("\nInserisci il tuo attuale volume (min: 0, max: 10)");
+                    int volumeVid = Integer.parseInt(input.nextLine());
+                    System.out.println("\nInserisci la tua attuale luminosità (min: 0, max: 10)");
+                    int lumVid = Integer.parseInt(input.nextLine());
+                    Video vid = new Video(nomeVid, durataVid, volumeVid, lumVid);
+                    int checkVid = vid.getDurata();
+                    if (checkVid != -1) {
+                        myArr[i] = vid;
+                        break;
+                    } else {
+                        return;
+                    }
+
+                case 3:
+                    System.out.println("\nInserisci il nome della tua registrazione audio");
+                    String nomeRegAudio = input.nextLine();
+                    System.out.println("\nInserisci la durata della tua registrazione audio");
+                    int durataRegAudio = Integer.parseInt(input.nextLine());
+                    System.out.println("\nInserisci il tuo attuale volume (min: 0, max: 10)");
+                    int volumeRegAudio = Integer.parseInt(input.nextLine());
+                    RegistrazioneAudio regAudio = new RegistrazioneAudio(nomeRegAudio, durataRegAudio, volumeRegAudio);
+                    int checkRegAudio = regAudio.getDurata();
+                    if (checkRegAudio != -1) {
+                        myArr[i] = regAudio;
+                        break;
+                    } else {
+                        return;
+                    }
+                case 0:
+                    System.out.println("\nProgramma terminato con successo");
                     return;
-                }
-            case 0:
-                System.out.println("\nProgramma terminato con successo");
-                return;
-            default:
-                System.out.println("\nNon hai inserito una delle possibili scelte. Forzato arresto programma");
-                return;
+                default:
+                    System.out.println("\nNon hai inserito una delle possibili scelte. Forzato arresto programma");
+                    return;
+            }
         }
 
-        switch (choose1) {
-            case 1:
+        System.out.println("Scegli il su cosa vuoi lavorare");
+        for (int i = 0; i < myArr.length; i++) {
+            System.out.println("[" + (i + 1) + "]: " + myArr[i]);
+        }
+        System.out.println("[0]: Termina programma");
+        int chooseObj = Integer.parseInt(input.nextLine());
+
+        String nameClass = myArr[chooseObj - 1].getClass().getSimpleName();
+
+        switch (nameClass) {
+            case "Image":
                 int n = 12;
                 while (n != 0) {
+                    Player player1 = new Player();
+                    player1.setImg((Image) myArr[chooseObj - 1]);
                     System.out.println("\nChe cosa vuoi fare con la tua immagine?");
                     System.out.println("[1]: show()  -  [2]: increaseBrightness()  -  [3]: decreaseBrightness()  -  [0]: Termina programma");
                     int chooseImg = Integer.parseInt(input.nextLine());
@@ -91,10 +104,11 @@ public class Main {
                     }
                 }
                 break;
-
-            case 2:
+            case "Video":
                 int x = 12;
                 while (x != 0) {
+                    Player player1 = new Player();
+                    player1.setVid((Video) myArr[chooseObj - 1]);
                     System.out.println("\nChe cosa vuoi fare con il tuo video?");
                     System.out.println("[1]: play()  -  [2]: alzaVolume()  -  [3]: abbassaVolume()   -  [4]: increaseBrightness()  -  [5]: decreaseBrightness()  -  [0]: Termina programma");
                     int chooseVid = Integer.parseInt(input.nextLine());
@@ -119,10 +133,11 @@ public class Main {
                     }
                 }
                 break;
-
-            case 3:
+            case "RegistrazioneAudio":
                 int y = 12;
                 while (y != 0) {
+                    Player player1 = new Player();
+                    player1.setRegAudio((RegistrazioneAudio) myArr[chooseObj - 1]);
                     System.out.println("\nChe cosa vuoi fare con la tua registrazione audio?");
                     System.out.println("[1]: play()  -  [2]: alzaVolume()  -  [3]: abbassaVolume()  -  [0]: Termina programma");
                     int chooseVid = Integer.parseInt(input.nextLine());
@@ -144,6 +159,7 @@ public class Main {
                 }
                 break;
         }
+
         input.close();
     }
 

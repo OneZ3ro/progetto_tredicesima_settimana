@@ -48,4 +48,13 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Play{
     public int getVolume() {
         return volume;
     }
+
+    @Override
+    public String toString() {
+        return "RegistrazioneAudio{" +
+                "durata=" + durata +
+                ", volume=" + volume +
+                ", titolo='" + titolo + '\'' +
+                '}';
+    }
 }

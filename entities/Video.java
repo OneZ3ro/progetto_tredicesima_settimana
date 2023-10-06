@@ -72,4 +72,14 @@ public class Video extends ElementoMultimediale implements Play, Brightness{
     public int getBrightness() {
         return brightness;
     }
+
+    @Override
+    public String toString() {
+        return "Video{" +
+                "durata=" + durata +
+                ", volume=" + volume +
+                ", brightness=" + brightness +
+                ", titolo='" + titolo + '\'' +
+                '}';
+    }
 }
