@@ -7,12 +7,13 @@ public class Video extends ElementoMultimediale implements Play, Brightness{
 
     public Video(String titolo, int durata, int volume, int brightness) {
         super(titolo);
-        if (durata > 0 && volume > 0 && brightness > 0) {
+        if ((durata >= 0 && volume >= 0 && brightness >= 0)  && (volume <= 10 && brightness <= 10)) {
             this.durata = durata;
             this.volume = volume;
             this.brightness = brightness;
         } else {
-            System.out.println("Uno dei valori che hai inserito è minore di 0! Riprova");
+            System.out.println("Uno dei valori che hai inserito è non rispetta gli standard! Riprova");
+            this.durata = -1;
         }
     }
 

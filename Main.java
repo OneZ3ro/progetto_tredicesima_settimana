@@ -19,8 +19,13 @@ public class Main {
                 System.out.println("Inserisci la tua attuale luminosità");
                 int lumImg = Integer.parseInt(input.nextLine());
                 Image img = new Image(nomeImg, lumImg);
-                player1.setImg(img);
-                break;
+                int checkImg = img.getBrightness();
+                if (checkImg != -1) {
+                    player1.setImg(img);
+                    break;
+                } else {
+                    return;
+                }
             case 2:
                 System.out.println("Inserisci il nome del tuo video");
                 String nomeVid = input.nextLine();
@@ -31,8 +36,14 @@ public class Main {
                 System.out.println("Inserisci la tua attuale luminosità");
                 int lumVid = Integer.parseInt(input.nextLine());
                 Video vid = new Video(nomeVid, durataVid, volumeVid, lumVid);
-                player1.setVid(vid);
-                break;
+                int checkVid = vid.getDurata();
+                if (checkVid != -1) {
+                    player1.setVid(vid);
+                    break;
+                } else {
+                    return;
+                }
+
             case 3:
                 System.out.println("Inserisci il nome della tua registrazione audio");
                 String nomeRegAudio = input.nextLine();
@@ -41,8 +52,13 @@ public class Main {
                 System.out.println("Inserisci il tuo attuale volume");
                 int volumeRegAudio = Integer.parseInt(input.nextLine());
                 RegistrazioneAudio regAudio = new RegistrazioneAudio(nomeRegAudio, durataRegAudio, volumeRegAudio);
-                player1.setRegAudio(regAudio);
-                break;
+                int checkRegAudio = regAudio.getDurata();
+                if (checkRegAudio != -1) {
+                    player1.setRegAudio(regAudio);
+                    break;
+                } else {
+                    return;
+                }
             case 0:
                 System.out.println("Programma terminato con successo");
                 return;

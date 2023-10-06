@@ -4,10 +4,11 @@ public class Image extends ElementoMultimediale implements Brightness{
     private int brightness; // deve essere maggiore di 0
     public Image(String titolo, int brightness) {
         super(titolo);
-        if (brightness > 0) {
+        if (brightness >= 0 && brightness <= 10) {
             this.brightness = brightness;
         } else {
-            System.out.println("Non puoi inserire un valore minore di 0! Riprova");
+            System.out.println("Uno dei valori che hai inserito è non rispetta gli standard! Riprova");
+            this.brightness = -1;
         }
     }
     public void show(){
