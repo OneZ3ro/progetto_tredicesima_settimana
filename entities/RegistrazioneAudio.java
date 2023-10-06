@@ -4,8 +4,10 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Play{
     private int durata; // deve essere maggiore di 0
     private int volume; // deve essere maggiore di 0
 
-    public RegistrazioneAudio(String titolo) {
+    public RegistrazioneAudio(String titolo, int durata, int volume) {
         super(titolo);
+        this.durata = durata;
+        this.volume = volume;
     }
 
     public void play(){
